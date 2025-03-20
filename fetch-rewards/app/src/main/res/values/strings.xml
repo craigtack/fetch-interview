@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Fetch Rewards</string>
+    <string name="id_label_value">ID: %1$d</string>
+    <string name="list_id_label_value">List ID: %1$d</string>
+    <string name="name_label_value">Name: %1$s</string>
+    <string name="an_error_occurred">An error occurred: %1$s</string>
+</resources>
