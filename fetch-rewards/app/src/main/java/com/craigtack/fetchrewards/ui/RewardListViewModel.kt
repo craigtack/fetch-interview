@@ -20,6 +20,7 @@ class RewardListViewModel @Inject constructor(
     val uiState: StateFlow<RewardListUiState> = _uiState.asStateFlow()
 
     init {
+        // Make API request here to persist result across configuration changes.
         viewModelScope.launch {
             try {
                 val rewards = repository.getRewards()

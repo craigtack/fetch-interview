@@ -1,7 +1,7 @@
 package com.craigtack.fetchrewards.ui
 
 /**
- * A reward with a non-null/non-blank [name].
+ * A reward with a non-null name.
  */
 data class Reward(
     val id: Int,

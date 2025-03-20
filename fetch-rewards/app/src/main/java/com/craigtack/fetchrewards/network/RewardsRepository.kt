@@ -21,6 +21,7 @@ class RewardsRepositoryImpl @Inject constructor(
         return withContext(ioDispatcher) {
             rewardsService.getRewards()
                 .mapNotNull {
+                    // Discard rewards with no name.
                     if (it.name.isNullOrBlank().not()) {
                         Reward(id = it.id, listId = it.listId, name = it.name)
                     } else {
@@ -32,6 +33,9 @@ class RewardsRepositoryImpl @Inject constructor(
     }
 }
 
+/**
+ * A comparator that sorts rewards first by list ID and then by name.
+ */
 class RewardsComparator @Inject constructor() : Comparator<Reward> {
     override fun compare(o1: Reward, o2: Reward): Int {
         return if (o1.listId == o2.listId) {
